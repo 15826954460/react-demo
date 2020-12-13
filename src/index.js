@@ -3,17 +3,29 @@ import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
 
-import App from './pages/app/App';
+import App from 'pages/app/App';
 import './index.css';
-import About from './pages/about/About';
-import My from './pages/my/My';
-
+import About from 'pages/about/About';
+import My from 'pages/my/My';
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
+      <ul>
+        <li>
+          <Link to="/">App</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
+          <Link to="/my">my</Link>
+        </li>
+      </ul>
+
+      <hr />
       <Switch>
-        <Route path="/home">
+        <Route path="/">
           <App />
         </Route>
         <Route path="/about">
