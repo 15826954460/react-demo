@@ -1,41 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Link, Switch, Route } from 'react-router-dom';
 
-import App from 'pages/app/App';
+import Home from 'pages/home/Index';
 import './index.css';
-import About from 'pages/about/About';
-import My from 'pages/my/My';
+import About from 'pages/login/Index';
+import My from 'pages/my/Index';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    <BrowserRouter>
       <ul>
         <li>
-          <Link to="/">App</Link>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <Link to="/login">Login</Link>
         </li>
         <li>
-          <Link to="/my">my</Link>
+          <Link to="/my">My</Link>
         </li>
       </ul>
-
       <hr />
       <Switch>
-        <Route path="/">
-          <App />
+        <Route path="/" exact>
+          <Home />
         </Route>
-        <Route path="/about">
+        <Route path="/login">
           <About />
         </Route>
         <Route path="/my">
           <My />
         </Route>
       </Switch>
-    </Router>
+    </BrowserRouter>,
   </React.StrictMode>,
   document.getElementById('root')
 );
